@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome">
+    <meta name="author" content="piecoin">
+    <link rel="shortcut icon" href="">
+
+    <title>Welcome</title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+/**
+ * Circular menu v2
+ */
+* { margin: 0; padding: 0; }
+html { font: 100%/1.3 Century Gothic, Verdana, sans-serif; }
+body { overflow: hidden; min-width: 20em; }
+.menuopt { display: none; }
+.circle, .circle:before, .circle:after { border-radius: 50%; }
+a {
+text-decoration: none;
+}
+
+nav {
+	margin: 5em auto;
+	min-width: 16em; width: 72%; max-width: 40em;
+}
+nav ul {
+	position: relative;
+	padding: 50%;
+	max-width: 0; max-height: 0;
+	box-shadow: 0 0 .5em rgba(0,0,0,.5);
+	list-style: none;
+	background: white;
+}
+nav li {
+	position: absolute;
+	transition: 0.2s;
+}
+.slice {
+	overflow: hidden;
+	position: absolute;
+	top: 0; left: 0;
+	width: 50%; height: 50%;
+	transform-origin: 100% 100%;
+}
+.unsel {
+	top: 34%; left: 34%;
+	width: 32%; height: 32%;
+	box-shadow: 0 0 .75em;
+	background: silver;
+}
+.facebook { transform: skewX(50deg); }
+.tumblr { transform: rotate(40deg) skewX(50deg); }
+.twitter { transform: rotate(80deg) skewX(50deg); }
+.youtube { transform: rotate(120deg) skewX(50deg); }
+.reddit { transform: rotate(160deg) skewX(50deg); }
+.chat { transform: rotate(-160deg) skewX(50deg); }
+.blog { transform: rotate(-120deg) skewX(50deg); }
+.email { transform: rotate(-80deg) skewX(50deg); }
+.pinterest { transform: rotate(-40deg) skewX(50deg); }
+.magnifiable { height: 100%; }
+nav label { cursor: pointer; }
+.slice label {
+	display: block;
+	width: 200%; height: 200%;
+	transform: skew(-50deg) rotate(-70deg);
+	box-shadow: 0 0 .1em black;
+	opacity: .5;
+	color: transparent;
+	font-size: .8em;
+	line-height: 1.9;
+	text-align: center;
+	text-decoration: none;
+	transition: 1s;
+}
+.slice label:before {
+	position: absolute;
+	top: 10%; left: 10%;
+	width: 80%; height: 80%;
+	border-radius: 50%;
+	box-shadow: 0 0 1em rgba(0,0,0,.5);
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	background-size: 35% 35%;
+	content: '';
+}
+.slice label:hover { opacity: 1; }
+.dark label:hover { color: white; }
+.light label:hover { color: black; }
+.unsel label {
+	display: block;
+	height: 100%;
+text-align: center;
+margin-top:40%;
+}
+
+.facebook label, .ofacebook:checked ~ nav .unsel { background: #1952a9; }
+.tumblr label, .otumblr:checked ~ nav .unsel { background: #3d5a70; } 
+.twitter label, .otwitter:checked ~ nav .unsel { background: #26d4f9; }
+.youtube label, .oyoutube:checked ~ nav .unsel { background: #2d3e50; }
+.reddit label, .oreddit:checked ~ nav .unsel { background: #f4f5fa; }
+.chat label, .ochat:checked ~ nav .unsel { background: #ffae00; }
+.blog label, .oblog:checked ~ nav .unsel { background: #008888; }
+.email label, .oemail:checked ~ nav .unsel { background: #ffff00; }
+.pinterest label, .opinterest:checked ~ nav .unsel { background: #fb4343; }
+.facebook label:before { background-image: url(icons_facebook.png); }
+.tumblr label:before { background-image: url(icons_tumblr.png); }
+.twitter label:before { background-image: url(icons_twitter.png); }
+.youtube label:before { background-image: url(icons_youtube.png); }
+.reddit label:before { background-image: url(icons_reddit.png); }
+.chat label:before { background-image: url(icons_chat.png); }
+.blog label:before { background-image: url(icons_blog.png); }
+.email label:before { background-image: url(icons_email.png); }
+.pinterest label:before { background-image: url(icons_pinterest.png); }
+.slice label:hover:after { opacity: 0; }
+.ofacebook:checked ~ nav .facebook { transform: skewX(50deg) scale(1.05); }
+.otumblr:checked ~ nav .tumblr { transform: rotate(40deg) skewX(50deg) scale(1.05); }
+.otwitter:checked ~ nav .twitter { transform: rotate(80deg) skewX(50deg) scale(1.05); }
+.oyoutube:checked ~ nav .youtube { transform: rotate(120deg) skewX(50deg) scale(1.05); }
+.oreddit:checked ~ nav .reddit { transform: rotate(160deg) skewX(50deg) scale(1.05); }
+.ochat:checked ~ nav .chat { transform: rotate(-160deg) skewX(50deg) scale(1.05); }
+.oblog:checked ~ nav .blog { transform: rotate(-120deg) skewX(50deg) scale(1.05); }
+.oemail:checked ~ nav .email { transform: rotate(-80deg) skewX(50deg) scale(1.05); }
+.opinterest:checked ~ nav .pinterest { transform: rotate(-40deg) skewX(50deg) scale(1.05); }
+.ofacebook:checked ~ nav .facebook label, 
+.otumblr:checked ~ nav .tumblr label, 
+.otwitter:checked ~ nav .twitter label, 
+.oyoutube:checked ~ nav .youtube label, 
+.oreddit:checked ~ nav .reddit label, 
+.opinterest:checked ~ nav .pinterest label ,
+.ochat:checked ~ nav .chat label , 
+.oblog:checked ~ nav .blog label, 
+.oemail:checked ~ nav .email label;
+}
+@media (min-width: 25em) { .slice label { font-size: 1em; line-height: 2.3; } }
+@media (min-width: 35em) { .slice label { font-weight: 700; line-height: 2.7; } }
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            //Insert generated JavaScript code from here -> http://pmg.softwaretailoring.net
+var piemenu = new wheelnav('piemenu');
+piemenu.clockwise = false;
+piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
+piemenu.createWheel();
+piemenu.setTooltips(['Facebook','Tumblr','Twitter','Youtube','Reddit','Chat','Blog','Pinterest']);
+
+        };
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <p>
+            PIE
+        </p>
+    </header>
+
+    <!-- Insert generated HTML5 code from here -> http://pmg.softwaretailoring.net -->
+<!-- content to be placed inside <body>…</body> -->
+<input type='radio' name='opt' id='ofacebook' class='menuopt ofacebook'>
+<input type='radio' name='opt' id='otumblr' class='menuopt otumblr'>
+<input type='radio' name='opt' id='otwitter' class='menuopt otwitter'>
+<input type='radio' name='opt' id='oyoutube' class='menuopt oyoutube'>
+<input type='radio' name='opt' id='oreddit' class='menuopt oreddit'>
+<input type='radio' name='opt' id='ochat' class='menuopt ochat'>
+<input type='radio' name='opt' id='oblog' class='menuopt oblog'>
+<input type='radio' name='opt' id='oemail' class='menuopt oemail'>
+<input type='radio' name='opt' id='opinterest' class='menuopt opinterest'>
+<input type='radio' name='opt' id='unsel' class='menuopt' checked>
+<nav>
+	<ul class='circle'>
+		<li class='facebook dark slice'>
+				<label for='ofacebook' class='circle'>Facebook</label>
+		</li>
+		<li class='tumblr dark slice'>
+				<label for='otumblr' class='circle'>Tumblr</label>
+		</li>
+		<li class='twitter dark slice'>
+				<label for='otwitter' class='circle'>Twitter</label>
+		</li>
+		<li class='youtube dark slice'>
+				<label for='oyoutube' class='circle'>Youtube</label>
+		</li>
+		<li class='reddit light slice'>
+				<label for='oreddit' class='circle'>Reddit</label>
+		</li>
+		<li class='chat light slice'>
+				<label for='ochat' class='circle'>Chat</label>
+		</li>
+		<li class='blog dark slice'>
+				<label for='oblog' class='circle'>Blog</label>
+		</li>
+		<li class='email light slice'>
+				<label for='oemail' class='circle'>Email</label>
+		</li>
+		<li class='pinterest dark slice'>
+				<label for='opinterest' class='circle'>Pinterest</label>
+		</li>
+		<li class='unsel circle'><h1><label for='unsel'>SEND</label></h1></li>
+	</ul>
+</nav>
+
+    <footer>
+        PIE
+    </footer>
+</body>
+</html>
